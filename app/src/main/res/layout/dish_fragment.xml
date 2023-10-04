@@ -3,13 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/backBut"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="back"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="#00000000"/>
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -18,19 +30,20 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/backBut">
 
                 <ImageView
                     android:id="@+id/titleImageView"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/ic_borsch"/>
+                    android:src="@drawable/ic_borsch" />
 
                 <TextView
                     android:id="@+id/titleTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Борщ" />
+                    android:text="Борщ"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <ImageView
@@ -49,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:text="Описание:"
                 android:textSize="24sp"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/mainImageView" />
@@ -57,6 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="проверкапроверкапроверкапроверкапроверкапроверкапроверкапроверкапроверка"
+                android:textColor="@color/white"
                 app:layout_constraintTop_toBottomOf="@+id/textView1"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
