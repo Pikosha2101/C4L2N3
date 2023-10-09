@@ -18,11 +18,10 @@ class DishFragment : Fragment(R.layout.dish_fragment) {
         savedInstanceState: Bundle?
     ): View {
         _binding = DishFragmentBinding.inflate(inflater, container, false)
-
-            binding.titleImageView.setImageResource(arguments?.getInt("TitleImage")!!)
-            binding.titleTextView.text = getString(arguments?.getInt("TitleName")!!)
-            binding.mainImageView.setImageResource(arguments?.getInt("Image")!!)
-            binding.descriptTextView.text = getString(arguments?.getInt("Descr")!!)
+        binding.titleImageView.setImageResource(arguments?.getInt("TitleImage")!!)
+        binding.titleTextView.text = getString(arguments?.getInt("TitleName")!!)
+        binding.mainImageView.setImageResource(arguments?.getInt("Image")!!)
+        binding.descriptTextView.text = getString(arguments?.getInt("Descr")!!)
         return binding.root
     }
 

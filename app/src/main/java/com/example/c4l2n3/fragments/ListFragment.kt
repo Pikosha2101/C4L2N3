@@ -21,6 +21,8 @@ class ListFragment : Fragment(R.layout.list_fragment) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        _binding = ListFragmentBinding.inflate(inflater, container, false)
+
         val imageArray = intArrayOf(R.drawable.ic_borsch, R.drawable.ic_cesar, R.drawable.ic_milkshake, R.drawable.ic_blinchik, R.drawable.ic_spagetti)
         val nameArray = arrayOf("borsch", "caesar", "milkshake", "pancakes", "spaghetti")
 
@@ -30,7 +32,6 @@ class ListFragment : Fragment(R.layout.list_fragment) {
             itemArrayList.add(item)
         }
 
-        _binding = ListFragmentBinding.inflate(inflater, container, false)
         binding.listView1.adapter = ListAdapter(requireContext(), itemArrayList)
         return binding.root
     }
