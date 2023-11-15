@@ -17,7 +17,7 @@ class ListAdapter (context: Context, private val arrayList: ArrayList<ItemModel>
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val inflater = LayoutInflater.from(parent.context)
         binding = ListViewItemBinding.inflate(inflater, parent, false)
-
+        //Picasso.get().load(arrayList[position].image).into(binding.iconImageView)
         binding.iconImageView.setImageResource(arrayList[position].image)
         binding.nameTextView.text = arrayList[position].name
 

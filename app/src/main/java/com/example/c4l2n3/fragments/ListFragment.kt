@@ -40,55 +40,50 @@ class ListFragment : Fragment(R.layout.list_fragment) {
         super.onViewCreated(view, savedInstanceState)
         listView1.onItemClickListener = AdapterView.OnItemClickListener{ _, _, position, _ ->
             var bundle = Bundle()
-            when (itemArrayList[position].image){
-                R.drawable.ic_borsch -> {
+            when (itemArrayList[position].name){
+                "borsch" -> {
                     val titleImage : Int = R.drawable.ic_borsch
-                    val image : Int = R.drawable.borsch
                     bundle = createBundle(
                         titleImage,
                         R.string.borsch,
-                        image,
+                        "https://www.gastronom.ru/binfiles/images/20220907/b7f6fa22.jpg",
                         R.string.borschDescr
                     )
                 }
-                R.drawable.ic_cesar -> {
+                "caesar" -> {
                     val titleImage : Int = R.drawable.ic_cesar
-                    val image : Int = R.drawable.cesar
                     bundle = createBundle(
                         titleImage,
                         R.string.cesar,
-                        image,
+                        "https://e1.edimdoma.ru/data/posts/0002/2917/22917-ed4_wide.jpg?1631185869",
                         R.string.cesarDescr
                     )
                 }
-                R.drawable.ic_milkshake -> {
+                "milkshake" -> {
                     val titleImage : Int = R.drawable.ic_milkshake
-                    val image : Int = R.drawable.milkshake
                     bundle = createBundle(
                         titleImage,
                         R.string.milkshake,
-                        image,
+                        "https://e3.edimdoma.ru/data/posts/0002/5904/25904-ed4_wide.jpg?1662982620",
                         R.string.milkshakeDescr
                     )
                 }
-                R.drawable.ic_blinchik -> {
+                "pancakes" -> {
                     val titleImage : Int = R.drawable.ic_blinchik
-                    val image : Int = R.drawable.blinchik
                     bundle = createBundle(
                         titleImage,
-                        R.string.cesar,
-                        image,
-                        R.string.cesarDescr
+                        R.string.blinchik,
+                        "https://e0.edimdoma.ru/data/recipes/0013/5237/135237-ed4_wide.jpg?1628766116",
+                        R.string.blinchikDescr
                     )
                 }
-                R.drawable.ic_spagetti -> {
+                "spaghetti" -> {
                     val titleImage : Int = R.drawable.ic_spagetti
-                    val image : Int = R.drawable.spagetti
                     bundle = createBundle(
                         titleImage,
-                        R.string.cesar,
-                        image,
-                        R.string.cesarDescr
+                        R.string.spagetti,
+                        "https://www.gastronom.ru/binfiles/images/20180227/baeeb555.jpg",
+                        R.string.spagettiDescr
                     )
                 }
             }
@@ -99,13 +94,13 @@ class ListFragment : Fragment(R.layout.list_fragment) {
     private fun createBundle(
         titleImage: Int,
         titleName: Int,
-        image: Int,
+        image: String,
         descr: Int
     ): Bundle {
         val bundle = Bundle()
         bundle.putInt("TitleImage", titleImage)
         bundle.putInt("TitleName", titleName)
-        bundle.putInt("Image", image)
+        bundle.putString("Image", image)
         bundle.putInt("Descr", descr)
         return bundle
     }

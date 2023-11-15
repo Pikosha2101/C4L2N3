@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.c4l2n3.R
 import com.example.c4l2n3.databinding.DishFragmentBinding
+import com.squareup.picasso.Picasso
 
 class DishFragment : Fragment(R.layout.dish_fragment) {
     private var _binding: DishFragmentBinding? = null
@@ -20,7 +21,8 @@ class DishFragment : Fragment(R.layout.dish_fragment) {
         _binding = DishFragmentBinding.inflate(inflater, container, false)
         binding.titleImageView.setImageResource(arguments?.getInt("TitleImage")!!)
         binding.titleTextView.text = getString(arguments?.getInt("TitleName")!!)
-        binding.mainImageView.setImageResource(arguments?.getInt("Image")!!)
+        Picasso.get().load(arguments?.getString("Image")!!).into(binding.mainImageView)
+        //binding.mainImageView.setImageResource(arguments?.getInt("Image")!!)
         binding.descriptTextView.text = getString(arguments?.getInt("Descr")!!)
         return binding.root
     }
